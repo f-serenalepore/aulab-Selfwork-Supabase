@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_app/core/supabase_client.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SupabaseClientManager.init();
   runApp(const MyApp());
