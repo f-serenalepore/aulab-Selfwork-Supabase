@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_app/core/supabase_client.dart';
 import 'package:supabase_app/viewmodel/auth_view_model.dart';
+import 'package:supabase_app/viewmodel/book_view_model.dart';
 import 'package:supabase_app/viewmodel/profile_view_model.dart';
 import 'package:supabase_app/views/auth/login_view.dart';
 import 'package:supabase_app/views/home_view.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
         ChangeNotifierProvider(create: (_) => ProfileViewModel()),
+        ChangeNotifierProvider(create: (_) => BookViewModel()),
       ],
       child: Consumer<AuthViewModel>(
         builder: (context, auth, _) {
