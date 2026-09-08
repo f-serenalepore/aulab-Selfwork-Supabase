@@ -31,6 +31,7 @@ class RegisterView extends StatelessWidget {
                     controller: passwordController,
                     decoration: InputDecoration(labelText: 'Password'),
                   ),
+
                   ElevatedButton(
                     onPressed: () async {
                       await vm.register(
