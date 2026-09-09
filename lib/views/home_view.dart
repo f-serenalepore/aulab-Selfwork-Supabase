@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_app/viewmodel/auth_view_model.dart';
 import 'package:supabase_app/views/add_book_view.dart';
+import 'package:supabase_app/views/all_books_view.dart';
 import 'package:supabase_app/views/auth/login_view.dart';
 import 'package:supabase_app/views/widgets/bottom_nav_bar.dart';
 
@@ -30,14 +31,27 @@ class HomeView extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AddBookView()),
-            );
-          },
-          child: Text("Aggiungi Libro"),
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AllBooksView()),
+                );
+              },
+              child: Text("Esplora tutti ilibri"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AddBookView()),
+                );
+              },
+              child: Text("Aggiungi Libro"),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavBar(currentIndex: 0),
