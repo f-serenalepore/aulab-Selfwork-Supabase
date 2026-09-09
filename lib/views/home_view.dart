@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_app/viewmodel/auth_view_model.dart';
+import 'package:supabase_app/views/add_book_view.dart';
 import 'package:supabase_app/views/auth/login_view.dart';
 import 'package:supabase_app/views/widgets/bottom_nav_bar.dart';
 
@@ -12,7 +13,7 @@ class HomeView extends StatelessWidget {
     final vm = Provider.of<AuthViewModel>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("SupabaseApp"),
+        title: Text("Home View"),
         actions: [
           IconButton(
             onPressed: () async {
@@ -28,7 +29,17 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(child: Text("Home View")),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AddBookView()),
+            );
+          },
+          child: Text("Aggiungi Libro"),
+        ),
+      ),
       bottomNavigationBar: BottomNavBar(currentIndex: 0),
     );
   }
