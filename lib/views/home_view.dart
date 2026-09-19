@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => AllBooksView()),
                 );
               },
-              child: Text("Esplora tutti ilibri"),
+              child: Text("Esplora tutti i libri"),
             ),
             ElevatedButton(
               onPressed: () {

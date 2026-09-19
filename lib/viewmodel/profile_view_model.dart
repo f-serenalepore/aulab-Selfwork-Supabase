@@ -26,16 +26,24 @@ class ProfileViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> createUserProfile(String username, DateTime birthdate) async {
+  Future<void> createUserProfile(
+    String username,
+    DateTime birthdate, {
+    File? imageFile,
+  }) async {
     final id = _client.auth.currentUser?.id;
     if (id == null) return;
-    final newProfile = UserProfile(
-      id: id,
-      username: username,
-      birthdate: birthdate,
-      avatarUrl: null,
-    );
     try {
+      String? avatarUrl;
+      if (imageFile != null) {
+        avatarUrl = await _storageService.uploadProfileImage(imageFile, id);
+      }
+      final newProfile = UserProfile(
+        id: id,
+        username: username,
+        birthdate: birthdate,
+        avatarUrl: avatarUrl,
+      );
       await _profileService.createUserProfile(newProfile);
       profile = newProfile;
     } catch (e) {

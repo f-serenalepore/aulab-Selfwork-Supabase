@@ -133,6 +133,7 @@ class _UserProfileViewState extends State<UserProfileView> {
                             await profileVM.createUserProfile(
                               username,
                               _selectedDate!,
+                              imageFile: _selectedFile,
                             );
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
