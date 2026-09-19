@@ -25,7 +25,7 @@ class BookListWidget extends StatelessWidget {
             itemCount: books.length,
             itemBuilder: (context, index) {
               final book = books[index];
-              final images = viewModel.bookImages[book.id];
+              final images = book.images;
 
               return BookCard(
                 book: book,
