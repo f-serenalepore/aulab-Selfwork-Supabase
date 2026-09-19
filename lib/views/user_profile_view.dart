@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -10,7 +9,6 @@ import 'package:supabase_app/views/widgets/bottom_nav_bar.dart';
 
 class UserProfileView extends StatefulWidget {
   const UserProfileView({super.key});
-
   @override
   State<UserProfileView> createState() => _UserProfileViewState();
 }
@@ -146,7 +144,10 @@ class _UserProfileViewState extends State<UserProfileView> {
                               birthdate: _selectedDate!,
                               avatarUrl: profile.avatarUrl,
                             );
-                            await profileVM.updateUserProfile(updated);
+                            await profileVM.updateUserProfile(
+                              updated,
+                              imageFile: _selectedFile,
+                            );
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text("Profilo aggiornato"),

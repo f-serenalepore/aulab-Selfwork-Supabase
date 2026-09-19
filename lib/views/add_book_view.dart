@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_app/core/book_image_service.dart';
-import 'package:supabase_app/core/storage_servivce.dart';
+import 'package:supabase_app/core/storage_service.dart';
 import 'package:supabase_app/models/book_image.dart';
 import 'package:supabase_app/models/book_model.dart';
 import 'package:supabase_app/viewmodel/book_view_model.dart';
