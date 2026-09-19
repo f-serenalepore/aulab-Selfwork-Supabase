@@ -76,7 +76,9 @@ class _UserProfileViewState extends State<UserProfileView> {
                               : profile?.avatarUrl != null
                               ? NetworkImage(profile!.avatarUrl!)
                               : AssetImage('assets/grisu.jpg') as ImageProvider,
-                          child: profile?.avatarUrl == null
+                          child:
+                              _selectedFile == null &&
+                                  profile?.avatarUrl == null
                               ? const Icon(Icons.person, size: 50)
                               : null,
                         ),
